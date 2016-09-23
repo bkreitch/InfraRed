@@ -59,6 +59,7 @@
 
           virt-customize -a {{ base_image_path }}/{{ base_image }} \
               --run-command 'yum remove -y cloud-init*' \
+              --run-command 'rm /etc/dhcp/dhclient.conf' \
               --root-password password:redhat \
               --mkdir /root/.ssh \
               --chmod 0700:/root/.ssh \
