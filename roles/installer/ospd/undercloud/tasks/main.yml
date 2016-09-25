@@ -18,10 +18,10 @@
           {%- else -%}
           False
           {%- endif -%}"
-      deafult_conf: /usr/share/instack-undercloud/undercloud.conf.sample
+      default_conf: /usr/share/instack-undercloud/undercloud.conf.sample
   copy:
       remote_src: "{{ not local_src }}"
-      src: "{{ local_src | ternary(local_src, deafult_conf)}}"
+      src: "{{ local_src | ternary(local_src, default_conf)}}"
       dest: "/home/{{ installer.user.name }}/undercloud.conf"
       owner: "{{ installer.user.name }}"
       group: "{{ installer.user.name }}"
