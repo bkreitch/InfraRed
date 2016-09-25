@@ -35,13 +35,13 @@ subparsers:
                        help: |
                            The Openstack under test version.
                            This value can be overridden by the extra vars: '-e installer.product.version=<value>'
-                       choices: ['5', '6', '7', '8', '9', '10']
+                       choices: ['kilo', 'liberty', 'mitaka', 'newton']
                   openstack-installer:
                        type: Value
                        help: |
                            The Openstack installation type.
                            This value can be overridden by the extra vars: '-e installer.type=<value>'.
-                       choices: ['packstack', 'ospd']
+                       choices: ['packstack', 'ospd', 'tripleo']
                   config-options:
                        type: DictValue
                        help: |

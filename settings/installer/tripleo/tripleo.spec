@@ -1,7 +1,7 @@
 ---
 subparsers:
-    ospd:
-        help: Installs openstack using OSP Director
+    tripleo:
+        help: Installs openstack using TripleO
         include_groups: ['Ansible options', 'Inventory hosts options', 'Common options', 'Configuration file options']
         groups:
             - title: Introspection
@@ -34,8 +34,8 @@ subparsers:
                   product-version:
                       type: Value
                       help: The product version (product == director)
-                      choices: ["7", "8", "9", "10"]
-                      default: 9
+                      choices: ["kilo", "liberty", "mitaka", "newton"]
+                      default: newton
 
                   product-build:
                       type: Value
@@ -45,8 +45,8 @@ subparsers:
                   product-core-version:
                       type: Value
                       help: The product core version (product-core == overcloud)
-                      choices: ["7", "8", "9", "10"]
-                      default: 9
+                      choices: ["kilo", "liberty", "mitaka", "newton"]
+                      default: newton
 
                   product-core-build:
                       type: Value
