@@ -151,7 +151,7 @@ subparsers:
                         * IMPORT - fetch from external source (versions 7 and 8). Requires to specify '--image-url'.
                         * BUILD - build images locally (takes longer)
                     choices: [import, build, rpm]
-                    default: rpm
+                    default: build
 
                 images-url:
                     type: Value
