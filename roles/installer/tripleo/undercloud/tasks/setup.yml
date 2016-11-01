@@ -28,6 +28,11 @@
 #  with_items: "{{ (installer.extra_repos|default({})).from_url | default([]) }}"
 #  when: (installer.extra_repos|default({})).from_url is defined
 
+- name: install OpenStack repo package
+  yum:
+      state: present
+      name: "centos-release-openstack-{{ installer.product.version }}"
+
 - name: update system packages
   yum:
       state: latest
