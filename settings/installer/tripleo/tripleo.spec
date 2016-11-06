@@ -41,8 +41,8 @@ subparsers:
                   product-version:
                       type: Value
                       help: The product version (product == director)
-                      choices: ["kilo", "liberty", "mitaka"]
-                      default: mitaka
+                      choices: ["kilo", "liberty", "mitaka", "newton"]
+                      default: newton
 
                   product-build:
                       type: Value
@@ -52,8 +52,8 @@ subparsers:
                   product-core-version:
                       type: Value
                       help: The product core version (product-core == overcloud)
-                      choices: ["kilo", "liberty", "mitaka"]
-                      default: mitaka
+                      choices: ["kilo", "liberty", "mitaka", "newton"]
+                      default: newton
 
                   product-core-build:
                       type: Value
