@@ -28,15 +28,6 @@
 - include: "undercloud-restore.yml"
   when: "'undercloud' not in groups"
 
-- name: Make sure facter is installed
-  hosts: virthost
-  gather_facts: no
-  tasks:
-      - name: Install facter
-        yum:
-            pkg: facter 
-            state: present
-
 # Dumping all facts for later use
 - name: Dumping facts from all nodes for later use
   hosts: all:!localhost
