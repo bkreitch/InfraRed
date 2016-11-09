@@ -12,6 +12,11 @@
 #        rr_distro_version: "{% if installer.product.version|int < 10 %}7.2{% else %}7.3{% endif %}"
 #        mirror: "{{ installer.mirror | default(omit) }}"
   tasks:
+      - name: install OpenStack repo package (for Ironic)
+        yum:
+            state: present
+            name: "centos-release-openstack-{{ installer.product.version }}"
+
       - name: update /etc/hosts with VMs details
         lineinfile:
             dest: "/etc/hosts"
