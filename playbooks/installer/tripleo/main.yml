@@ -284,6 +284,10 @@
   become_user: "root"
   become_method: "sudo"
   tasks:
+      - seboolean:
+            name: haproxy_connect_any
+            state: yes
+            persistent: yes
       - selinux:
             policy: "targeted"
             state: "{{ installer.selinux | default('enforcing') }}"
